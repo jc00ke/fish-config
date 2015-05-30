@@ -14,6 +14,7 @@ set fish_theme agnoster
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
+. $HOME/.nix-profile/etc/profile.d/nix.fish
 
 # Load aliases
 . $fish_config/aliases.fish
