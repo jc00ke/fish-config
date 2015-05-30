@@ -50,4 +50,6 @@ if test -f ~/.ssh/private_tokens
   . ~/.ssh/private_tokens.fish
 end
 
-eval (direnv hook fish)
+if which -s direnv
+  eval (direnv hook fish)
+end
