@@ -49,9 +49,7 @@ if test -f ~/.ssh/private_tokens
   . ~/.ssh/private_tokens.fish
 end
 
-if which -s direnv
-  eval (direnv hook fish)
-end
+eval (direnv hook fish)
 
 . $HOME/.nix-profile/etc/profile.d/nix.fish
 
