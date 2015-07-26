@@ -2,9 +2,6 @@
 set fish_path $HOME/.oh-my-fish
 set fish_config $HOME/.config/fish
 
-# Theme
-set fish_theme agnoster
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 #set fish_plugins autojump bundler git rails node gem rake
@@ -14,6 +11,8 @@ set fish_theme agnoster
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
+
+Theme agnoster
 
 # Load aliases
 . $fish_config/aliases.fish
