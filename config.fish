@@ -27,17 +27,9 @@ set -x GEMSTONE $MAGLEV_HOME/gemstone
 set -x GEMSTONE_GLOBAL_DIR $MAGLEV_HOME
 set -e GEMSTONE_NRS_ALL
 
-set -x GOROOT $HOME/src/go
-set -x GOPATH $HOME/projects/go
-
 set -x PATH $PATH $HOME/src/bin
-set -x PATH $PATH $HOME/.cabal/bin
-set -x PATH $PATH $HOME/src/Idris-dev/.cabal-sandbox/bin
 set -x PATH $PATH $MAGLEV_HOME/bin
-set -x PATH $PATH $HOME/src/mongodb/bin
 set -x PATH $PATH /usr/local/heroku/bin
-set -x PATH $PATH $GOROOT/bin
-set -x PATH $PATH $GOPATH/bin
 
 . /usr/local/share/chruby/chruby.fish
 . /usr/local/share/chruby/auto.fish
@@ -49,6 +41,4 @@ if test -f ~/.ssh/private_tokens
 end
 
 eval (direnv hook fish)
-
-. $HOME/.nix-profile/etc/profile.d/nix.fish
 
