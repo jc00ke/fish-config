@@ -20,7 +20,6 @@ Theme agnoster
 set -x fish_greeting ''
 set -x EDITOR vim
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
-
 set -x MAGLEV_OPTS "-q"
 set -x MAGLEV_HOME $HOME/projects/maglev/maglev
 set -x GEMSTONE $MAGLEV_HOME/gemstone
