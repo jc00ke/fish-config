@@ -39,5 +39,9 @@ if test -f ~/.ssh/private_tokens
   . ~/.ssh/private_tokens.fish
 end
 
+if test -d ~/bin
+  set -x PATH $PATH $HOME/bin
+end
+
 eval (direnv hook fish)
 
