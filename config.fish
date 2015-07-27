@@ -12,7 +12,7 @@ set fish_config $HOME/.config/fish
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
-Theme agnoster
+Theme "agnoster"
 
 # Load aliases
 . $fish_config/aliases.fish
