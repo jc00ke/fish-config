@@ -42,4 +42,9 @@ if test -d ~/bin
   set -x PATH $PATH $HOME/bin
 end
 
+if test -f $HOME/.emoji_vars.fish
+  source $HOME/.emoji_vars.fish
+end
+
+
 eval (direnv hook fish)
