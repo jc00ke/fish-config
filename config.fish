@@ -36,11 +36,7 @@ set -x PATH $PATH $HOME/src/node/bin
 . /usr/local/share/chruby/chruby.fish
 . /usr/local/share/chruby/auto.fish
 
-chruby 2.2.3
-
-if test -f ~/.ssh/private_tokens
-  . ~/.ssh/private_tokens.fish
-end
+chruby 2.3.1
 
 if test -d ~/bin
   set -x PATH $PATH $HOME/bin
