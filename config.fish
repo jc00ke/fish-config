@@ -20,7 +20,7 @@ source $OMF_PATH/init.fish
 . $fish_config/aliases.fish
 
 set -x fish_greeting ''
-set -x EDITOR vim
+set -x EDITOR nvim
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
 set -x MAGLEV_OPTS "-q"
 set -x MAGLEV_HOME $HOME/projects/maglev/maglev
