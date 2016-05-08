@@ -31,6 +31,7 @@ set -e GEMSTONE_NRS_ALL
 set -x PATH $PATH $HOME/src/bin
 set -x PATH $PATH $MAGLEV_HOME/bin
 set -x PATH $PATH /usr/local/heroku/bin
+set -x PATH $PATH $HOME/src/node/bin
 
 . /usr/local/share/chruby/chruby.fish
 . /usr/local/share/chruby/auto.fish
