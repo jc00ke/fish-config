@@ -1,5 +1,5 @@
 function mux
   set TERM screen-256color-bce
-  command mux $argv
+  command tmuxinator $argv
 end
 
