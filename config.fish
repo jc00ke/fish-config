@@ -19,6 +19,7 @@ source $OMF_PATH/init.fish
 # Load aliases
 . $fish_config/aliases.fish
 
+set -x TERM "xterm-256color"
 set -x fish_greeting ''
 set -x EDITOR nvim
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
@@ -46,6 +47,9 @@ if test -f $HOME/.emoji_vars.fish
   source $HOME/.emoji_vars.fish
 end
 
+if test -d $HOME/.config/base16-shell
+  eval sh $HOME/.config/base16-shell/base16-solarized.dark.sh
+end
 
 eval (direnv hook fish)
 source ~/.asdf/asdf.fish
