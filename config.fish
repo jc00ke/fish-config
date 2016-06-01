@@ -48,7 +48,7 @@ if test -f $HOME/.emoji_vars.fish
 end
 
 if test -d $HOME/.config/base16-shell
-  eval sh $HOME/.config/base16-shell/base16-solarized.dark.sh
+  toggle_shell_theme $FISH_COLOR_THEME_VARIANT
 end
 
 eval (direnv hook fish)
