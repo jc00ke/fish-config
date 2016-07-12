@@ -1,4 +1,4 @@
 function gbx
-  git branch | selecta | xargs git branch -d
+  git branch | fzf | xargs git branch -d
 end
 

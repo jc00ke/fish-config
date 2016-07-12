@@ -1,4 +1,4 @@
 function gcb
-  git branch | selecta | xargs git checkout
+  git branch | fzf | xargs git checkout
 end
 

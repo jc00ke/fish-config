@@ -1,3 +1,3 @@
 function chr
-  chruby (chruby | selecta)
+  chruby (chruby | fzf)
 end
