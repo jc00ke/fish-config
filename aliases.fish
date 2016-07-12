@@ -9,6 +9,7 @@ alias xclipx "xclip -selection clipboard"
 alias pt "papertrail -c ~/.ssh/papertrail.yml"
 alias ctp "colortail -g papertrail"
 
+alias git="hub"
 alias gst "git status --ignore-submodules=dirty"
 alias gd "git icdiff"
 alias gdt "git difftool"
