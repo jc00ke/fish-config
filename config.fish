@@ -37,6 +37,12 @@ set -x PATH $PATH $HOME/src/node/bin
 . /usr/local/share/chruby/chruby.fish
 . /usr/local/share/chruby/auto.fish
 
+if test -d /usr/local/go/bin
+  set -x PATH $PATH /usr/local/go/bin
+  set -x GOPATH $HOME/projects/golang
+  set -x PATH $PATH $GOPATH/bin
+end
+
 chruby 2.3.1
 
 if test -d ~/bin
@@ -48,7 +54,7 @@ if test -f $HOME/.emoji_vars.fish
 end
 
 if test -d $HOME/.config/base16-shell
-  toggle_shell_theme $FISH_COLOR_THEME_VARIANT
+  toggle_shell_theme (get_theme_variant)
 end
 
 eval (direnv hook fish)
