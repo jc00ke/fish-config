@@ -34,6 +34,8 @@ set -x PATH $PATH $MAGLEV_HOME/bin
 set -x PATH $PATH /usr/local/heroku/bin
 set -x PATH $PATH $HOME/src/node/bin
 
+. $HOME/.nvim/bundle/neoman.vim/scripts/neovim.fish
+alias man "nman"
 . /usr/local/share/chruby/chruby.fish
 . /usr/local/share/chruby/auto.fish
 
