@@ -43,7 +43,6 @@ alias "gem^" "gem update --no-rdoc --no-ri"
 alias "gem^!" "gem update --system"
 
 alias unhitch 'hitch -u'
-alias vupdate "vim +PluginInstall +qall"
 
 function oops
   eval command sudo $history[1]
