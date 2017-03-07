@@ -47,6 +47,10 @@ if test -d $HOME/bin
   set -x PATH $PATH $HOME/bin
 end
 
+if test -d $HOME/.local/bin
+  set -x PATH $PATH $HOME/.local/bin
+end
+
 if test -f $HOME/.emoji_vars.fish
   source $HOME/.emoji_vars.fish
 end
