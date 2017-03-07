@@ -24,14 +24,8 @@ set -x fish_greeting ''
 set -x EDITOR nvim
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
-set -x MAGLEV_OPTS "-q"
-set -x MAGLEV_HOME $HOME/projects/maglev/maglev
-set -x GEMSTONE $MAGLEV_HOME/gemstone
-set -x GEMSTONE_GLOBAL_DIR $MAGLEV_HOME
-set -e GEMSTONE_NRS_ALL
 
 set -x PATH $PATH $HOME/src/bin
-set -x PATH $PATH $MAGLEV_HOME/bin
 set -x PATH $PATH /usr/local/heroku/bin
 set -x PATH $PATH $HOME/src/node/bin
 set -x PATH $PATH $HOME/.cabal/bin
