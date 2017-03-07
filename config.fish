@@ -26,9 +26,7 @@ set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
 
 set -x PATH $PATH $HOME/src/bin
-set -x PATH $PATH /usr/local/heroku/bin
 set -x PATH $PATH $HOME/src/node/bin
-set -x PATH $PATH $HOME/.cabal/bin
 
 . $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
 . /usr/local/share/chruby/chruby.fish
