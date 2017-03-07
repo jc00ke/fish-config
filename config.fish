@@ -5,7 +5,7 @@ set -g OMF_PATH $HOME/.local/share/omf
 set -g OMF_CONFIG $HOME/.config/omf
 
 # Path to here
-set fish_path $HOME/.oh-my-fish
+set fish_path $HOME/.local/share/omf
 set fish_config $HOME/.config/fish
 
 ### Configuration required to load oh-my-fish ###
