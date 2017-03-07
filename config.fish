@@ -22,7 +22,7 @@ source $OMF_PATH/init.fish
 set -x TERM "xterm-256color"
 set -x fish_greeting ''
 set -x EDITOR nvim
-set -x MANPAGER="nvim -c 'set ft=neoman' -"
+set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
 set -x MAGLEV_OPTS "-q"
 set -x MAGLEV_HOME $HOME/projects/maglev/maglev
@@ -36,7 +36,7 @@ set -x PATH $PATH /usr/local/heroku/bin
 set -x PATH $PATH $HOME/src/node/bin
 set -x PATH $PATH $HOME/.cabal/bin
 
-. $HOME/.nvim/bundle/neoman.vim/scripts/neovim.fish
+. $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
 . /usr/local/share/chruby/chruby.fish
 . /usr/local/share/chruby/auto.fish
 
