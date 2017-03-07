@@ -1,4 +1,4 @@
 function update
-  sudo apt-fast update $argv
+  sudo apt-get update $argv
 end
 

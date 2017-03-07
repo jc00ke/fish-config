@@ -1,3 +1,3 @@
 function remove
-  sudo apt-fast remove $argv
+  sudo apt-get remove $argv
 end

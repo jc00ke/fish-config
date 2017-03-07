@@ -1,4 +1,4 @@
 function install
-  sudo apt-fast install --no-install-recommends $argv
+  sudo apt-get install --no-install-recommends $argv
 end
 
