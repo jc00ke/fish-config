@@ -48,7 +48,7 @@ end
 
 chruby 2.4.0
 
-if test -d ~/bin
+if test -d $HOME/bin
   set -x PATH $PATH $HOME/bin
 end
 
