@@ -46,7 +46,7 @@ if test -d /usr/local/go/bin
   set -x PATH $PATH $GOPATH/bin
 end
 
-chruby 2.3.1
+chruby 2.4.0
 
 if test -d ~/bin
   set -x PATH $PATH $HOME/bin
