@@ -35,6 +35,7 @@ set -x PATH $PATH $HOME/.cabal/bin
 . /usr/local/share/chruby/auto.fish
 
 if test -d /usr/local/go/bin
+  and test -d $HOME/projects/golang
   set -x PATH $PATH /usr/local/go/bin
   set -x GOPATH $HOME/projects/golang
   set -x PATH $PATH $GOPATH/bin
