@@ -1,4 +1,4 @@
 function gbx
-  git branch | fzf | xargs git branch -D
+  git branch | sed '/master/d' | fzf | xargs git branch -D
 end
 
