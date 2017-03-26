@@ -39,7 +39,7 @@ if test -d /usr/local/go/bin
   set -x PATH $PATH $GOPATH/bin
 end
 
-chruby 2.4.0
+chruby 2.4.1
 
 if test -d $HOME/bin
   set -x PATH $PATH $HOME/bin
@@ -59,6 +59,10 @@ end
 
 if test -d $HOME/.config/base16-shell
   toggle_shell_theme (get_theme_variant)
+end
+
+if test -d $HOME/src/node/bin
+  set -x PATH $PATH $HOME/src/node/bin
 end
 
 eval (direnv hook fish)
