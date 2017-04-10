@@ -65,5 +65,15 @@ if test -d $HOME/src/node/bin
   set -x PATH $PATH $HOME/src/node/bin
 end
 
+# emacs ansi-term support
+if test -n "$EMACS"
+  set -x TERM eterm-color
+end
+
+# this function may be required
+function fish_title
+  true
+end
+
 eval (direnv hook fish)
 source ~/.asdf/asdf.fish
