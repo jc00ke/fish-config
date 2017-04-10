@@ -5,6 +5,7 @@ alias .. "cd .."
 alias ... "cd ../.."
 alias cdr "cd .. and cd -"
 alias xclipx "xclip -selection clipboard"
+alias mux "tmuxinator"
 
 alias pt "papertrail -c ~/.ssh/papertrail.yml"
 alias ctp "colortail -g papertrail"
