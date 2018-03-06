@@ -20,17 +20,16 @@ source $OMF_PATH/init.fish
 . $fish_config/aliases.fish
 
 set -x TERM "xterm-256color"
+set -x TERMINAL "alacritty"
 set -x fish_greeting ''
 set -x EDITOR nvim
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
 
 set -x PATH $PATH $HOME/src/bin
-set -x PATH $PATH $HOME/src/node/bin
+#set -x PATH $PATH $HOME/src/node/bin
 
 . $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
-. /usr/local/share/chruby/chruby.fish
-. /usr/local/share/chruby/auto.fish
 
 if test -d /usr/local/go/bin
   and test -d $HOME/projects/golang
@@ -38,8 +37,6 @@ if test -d /usr/local/go/bin
   set -x GOPATH $HOME/projects/golang
   set -x PATH $PATH $GOPATH/bin
 end
-
-chruby 2.4.1
 
 if test -d $HOME/bin
   set -x PATH $PATH $HOME/bin
