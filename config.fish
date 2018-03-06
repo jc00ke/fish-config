@@ -25,6 +25,7 @@ set -x fish_greeting ''
 set -x EDITOR nvim
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
+set -x SSH_AUTH_SOCK (gnome-keyring-daemon --start | cut -d"=" -f2)
 
 set -x PATH $PATH $HOME/src/bin
 #set -x PATH $PATH $HOME/src/node/bin
