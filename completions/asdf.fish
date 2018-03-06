@@ -18,33 +18,32 @@ end
 
 function __fish_asdf_arg_number -a number
     set -l cmd (commandline -opc)
-	test (count $cmd) -eq $number
+    test (count $cmd) -eq $number
 end
 
 function __fish_asdf_arg_at -a number
     set -l cmd (commandline -opc)
-	echo $cmd[$number]
+    echo $cmd[$number]
 end
-
-set -l official_plugins ruby erlang nodejs elixir
-
 
 # plugin-add completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a plugin-add -d "Add git repo as plugin"
-complete -f -c asdf -n '__fish_asdf_using_command plugin-add; and __fish_asdf_arg_number 2' -a (echo $official_plugins)
-complete -f -c asdf -n '__fish_asdf_using_command plugin-add; and __fish_asdf_arg_number 3' -a '(echo https://github.com/asdf-vm/asdf-(__fish_asdf_arg_at 3).git)'
+complete -f -c asdf -n '__fish_asdf_using_command plugin-add; and __fish_asdf_arg_number 2' -a '(asdf plugin-list-all)'
 
 # plugin-list completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a plugin-list -d "List installed plugins"
 
+# plugin-list-all completion
+complete -f -c asdf -n '__fish_asdf_needs_command' -a plugin-list-all -d "List all existing plugins"
+
 # plugin-remove completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a plugin-remove -d "Remove plugin and package versions"
-complete -f -c asdf -n '__fish_asdf_using_command plugin-remove; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)' -A
+complete -f -c asdf -n '__fish_asdf_using_command plugin-remove; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
 
 # plugin-update completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a plugin-update -d "Update plugin"
-complete -f -c asdf -n '__fish_asdf_using_command plugin-update; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)' -A
-complete -f -c asdf -n '__fish_asdf_using_command plugin-update; and __fish_asdf_arg_number 2' -a --all -A
+complete -f -c asdf -n '__fish_asdf_using_command plugin-update; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
+complete -f -c asdf -n '__fish_asdf_using_command plugin-update; and __fish_asdf_arg_number 2' -a --all
 
 # install completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a install -d "Install a specific version of a package"
@@ -56,9 +55,9 @@ complete -f -c asdf -n '__fish_asdf_needs_command' -a uninstall -d "Remove a spe
 complete -f -c asdf -n '__fish_asdf_using_command uninstall; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
 complete -f -c asdf -n '__fish_asdf_using_command uninstall; and __fish_asdf_arg_number 3' -a '(asdf list (__fish_asdf_arg_at 3))'
 
-# which completion
-complete -f -c asdf -n '__fish_asdf_needs_command' -a which -d "Display version set or being used for package"
-complete -f -c asdf -n '__fish_asdf_using_command which; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
+# current completion
+complete -f -c asdf -n '__fish_asdf_needs_command' -a current -d "Display version set or being used for package"
+complete -f -c asdf -n '__fish_asdf_using_command current; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
 
 # where completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a where -d "Display install path for an installed version"
@@ -81,12 +80,12 @@ complete -f -c asdf -n '__fish_asdf_using_command reshim; and __fish_asdf_arg_nu
 # local completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a local -d "Set local version for a plugin"
 complete -f -c asdf -n '__fish_asdf_using_command local; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
-complete -f -c asdf -n '__fish_asdf_using_command local; and test (count (commandline -opc)) -gt 2' -a '(asdf list (__fish_asdf_arg_at 3))'
+complete -f -c asdf -n '__fish_asdf_using_command local; and test (count (commandline -opc)) -gt 2' -a '(asdf list (__fish_asdf_arg_at 3)) system'
 
 # global completion
 complete -f -c asdf -n '__fish_asdf_needs_command' -a global -d "Set global version for a plugin"
 complete -f -c asdf -n '__fish_asdf_using_command global; and __fish_asdf_arg_number 2' -a '(asdf plugin-list)'
-complete -f -c asdf -n '__fish_asdf_using_command global; and test (count (commandline -opc)) -gt 2' -a '(asdf list (__fish_asdf_arg_at 3))'
+complete -f -c asdf -n '__fish_asdf_using_command global; and test (count (commandline -opc)) -gt 2' -a '(asdf list (__fish_asdf_arg_at 3)) system'
 
 # misc
 complete -f -c asdf -n '__fish_asdf_needs_command' -l "help" -d "Displays help"
