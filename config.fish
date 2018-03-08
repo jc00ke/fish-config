@@ -25,7 +25,6 @@ set -x fish_greeting ''
 set -x EDITOR nvim
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x RBX_HOME $HOME/projects/rubinius/rubinius
-set -x SSH_AUTH_SOCK (gnome-keyring-daemon --start --components=pkcs11,secrets,ssh | cut -d"=" -f2)
 
 set -x PATH $PATH $HOME/src/bin
 #set -x PATH $PATH $HOME/src/node/bin
@@ -71,6 +70,14 @@ end
 # this function may be required
 function fish_title
   true
+end
+
+if test -z "$SSH_ENV"
+  set -xg SSH_ENV $HOME/.ssh/environment
+end
+
+if not __ssh_agent_is_started
+  __ssh_agent_start
 end
 
 eval (direnv hook fish)
