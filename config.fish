@@ -1,3 +1,14 @@
+# Paths
+# =====
+function add_to_path
+  if not test -d $argv[1]
+    return
+  end
+  if not contains $argv[1] $PATH
+    set PATH $PATH $argv[1]
+  end
+end
+
 # Path to your oh-my-fish.
 set -g OMF_PATH $HOME/.local/share/omf
 
@@ -15,57 +26,24 @@ set fish_config $HOME/.config/fish
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
-
+set -g theme_display_ruby no
+set -g theme_color_scheme base16
 # Load aliases
-. $fish_config/aliases.fish
+source $fish_config/aliases.fish
 
 set -x TERM "xterm-256color"
 set -x TERMINAL "alacritty"
 set -x fish_greeting ''
-set -x EDITOR nvim
+set -x EDITOR "nvim"
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
-set -x RBX_HOME $HOME/projects/rubinius/rubinius
+set -x ERL_AFLAGS "-kernel shell_history enabled"
 
-set -x PATH $PATH $HOME/src/bin
-#set -x PATH $PATH $HOME/src/node/bin
+source $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
 
-. $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
-
-if test -d /usr/local/go/bin
-  and test -d $HOME/projects/golang
-  set -x PATH $PATH /usr/local/go/bin
-  set -x GOPATH $HOME/projects/golang
-  set -x PATH $PATH $GOPATH/bin
-end
-
-if test -d $HOME/bin
-  set -x PATH $PATH $HOME/bin
-end
-
-if test -d $HOME/.local/bin
-  set -x PATH $PATH $HOME/.local/bin
-end
-
-if test -d $HOME/.cargo/bin
-  set -x PATH $PATH $HOME/.cargo/bin
-end
-
-if test -f $HOME/.emoji_vars.fish
-  source $HOME/.emoji_vars.fish
-end
-
-if test -d $HOME/.config/base16-shell
-  toggle_shell_theme (get_theme_variant)
-end
-
-if test -d $HOME/src/node/bin
-  set -x PATH $PATH $HOME/src/node/bin
-end
-
-# emacs ansi-term support
-if test -n "$EMACS"
-  set -x TERM eterm-color
-end
+add_to_path "$HOME/src/bin"
+add_to_path "$HOME/bin"
+add_to_path "$HOME/.local/bin"
+add_to_path "$HOME/src/node/bin"
 
 # this function may be required
 function fish_title
@@ -76,9 +54,55 @@ if test -z "$SSH_ENV"
   set -xg SSH_ENV $HOME/.ssh/environment
 end
 
+if test -z "$HOME/.dokku/contrib/dokku_client.sh"
+  alias dokku "bash $HOME/.dokku/contrib/dokku_client.sh"
+end
+
 if not __ssh_agent_is_started
   __ssh_agent_start
 end
+
+# Abbreviations
+# =============
+# Clean abbreviations
+set -e fish_user_abbreviations
+
+abbr -a free "free -m"
+abbr -a ls "lsd"
+abbr -a l "ls -la"
+abbr -a lv "nvim -R"
+abbr -a .. "cd .."
+abbr -a ... "cd ../.."
+abbr -a cdr "cd .. and cd -"
+abbr -a xclipx "xclip -selection clipboard"
+abbr -a git "hub"
+abbr -a gst "git status --ignore-submodules=dirty"
+abbr -a gd "git diff"
+abbr -a gdt "git difftool"
+abbr -a gc "git commit -v"
+abbr -a gca "git commit -v -a"
+abbr -a gb "git branch"
+abbr -a gba "git branch -a"
+abbr -a gm "git merge"
+abbr -a gmv "git mv"
+abbr -a ga "git add"
+abbr -a gco "git checkout"
+abbr -a gsr "git svn rebase"
+abbr -a gsd "git svn dcommit"
+abbr -a gg "git log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color"
+abbr -a gfa "git commit --amend --reset-author -CHEAD"
+abbr -a conflicts "git ls-files --unmerged | cut -f2 | uniq"
+abbr -a b "bundle exec"
+abbr -a cat "bat"
+abbr -a ping "prettyping --nolegend"
+abbr -a dc "docker-compose"
+
+function oops
+  eval command sudo $history[1]
+end
+abbr -a fuck "oops"
+abbr -a yolo "oops"
+
 
 eval (direnv hook fish)
 source ~/.asdf/asdf.fish
