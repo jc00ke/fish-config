@@ -28,8 +28,6 @@ set fish_config $HOME/.config/fish
 source $OMF_PATH/init.fish
 set -g theme_display_ruby no
 set -g theme_color_scheme base16
-# Load aliases
-source $fish_config/aliases.fish
 
 set -x TERM "xterm-256color"
 set -x TERMINAL "alacritty"
@@ -72,6 +70,7 @@ abbr -a ls "lsd"
 abbr -a l "ls -la"
 abbr -a lv "nvim -R"
 abbr -a e nvim
+abbr -a es "nvim -S"
 abbr -a .. "cd .."
 abbr -a ... "cd ../.."
 abbr -a cdr "cd .. and cd -"
