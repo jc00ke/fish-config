@@ -71,6 +71,7 @@ abbr -a free "free -m"
 abbr -a ls "lsd"
 abbr -a l "ls -la"
 abbr -a lv "nvim -R"
+abbr -a e nvim
 abbr -a .. "cd .."
 abbr -a ... "cd ../.."
 abbr -a cdr "cd .. and cd -"
