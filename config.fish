@@ -43,6 +43,7 @@ add_to_path "$HOME/src/bin"
 add_to_path "$HOME/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "$HOME/src/node/bin"
+set PATH $PATH ".git/safe/../../bin"
 
 # this function may be required
 function fish_title
