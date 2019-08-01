@@ -35,6 +35,7 @@ set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+set -gx FZF_DEFAULT_COMMAND  'rg --files --color=never'
 
 source $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
 
