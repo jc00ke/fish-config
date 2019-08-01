@@ -61,6 +61,10 @@ if not __ssh_agent_is_started
   __ssh_agent_start
 end
 
+# Aliases
+# =======
+alias git="hub"
+
 # Abbreviations
 # =============
 # Clean abbreviations
@@ -87,12 +91,14 @@ abbr -a gba "git branch -a"
 abbr -a gm "git merge"
 abbr -a gmv "git mv"
 abbr -a ga "git add"
+abbr -a gap "git add -p"
 abbr -a gco "git checkout"
 abbr -a gsr "git svn rebase"
 abbr -a gsd "git svn dcommit"
 abbr -a gg "git log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color"
 abbr -a gfa "git commit --amend --reset-author -CHEAD"
 abbr -a conflicts "git ls-files --unmerged | cut -f2 | uniq"
+abbr -a gfp "git fetch --prune"
 abbr -a b "bundle exec"
 abbr -a cat "bat"
 abbr -a ping "prettyping --nolegend"
