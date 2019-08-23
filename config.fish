@@ -30,7 +30,7 @@ set -g theme_display_ruby no
 set -g theme_color_scheme base16
 
 set -x TERM "xterm-256color"
-set -x TERMINAL "alacritty"
+set -x TERMINAL "st"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANPAGER "nvim -c 'set ft=neoman' -"
@@ -50,17 +50,17 @@ function fish_title
   true
 end
 
-if test -z "$SSH_ENV"
-  set -xg SSH_ENV $HOME/.ssh/environment
-end
+#if test -z "$SSH_ENV"
+  #set -xg SSH_ENV $HOME/.ssh/environment
+#end
 
 if test -z "$HOME/.dokku/contrib/dokku_client.sh"
   alias dokku "bash $HOME/.dokku/contrib/dokku_client.sh"
 end
 
-if not __ssh_agent_is_started
-  __ssh_agent_start
-end
+#if not __ssh_agent_is_started
+  #__ssh_agent_start
+#end
 
 # Aliases
 # =======
@@ -72,7 +72,6 @@ alias git="hub"
 set -e fish_user_abbreviations
 
 abbr -a free "free -m"
-abbr -a ls "lsd"
 abbr -a l "ls -la"
 abbr -a lv "nvim -R"
 abbr -a e nvim
@@ -102,7 +101,6 @@ abbr -a conflicts "git ls-files --unmerged | cut -f2 | uniq"
 abbr -a gfp "git fetch --prune"
 abbr -a b "bundle exec"
 abbr -a cat "bat"
-abbr -a ping "prettyping --nolegend"
 abbr -a dc "docker-compose"
 
 function oops
