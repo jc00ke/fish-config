@@ -33,16 +33,17 @@ set -x TERM "xterm-256color"
 set -x TERMINAL "st"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
-set -x MANPAGER "nvim -c 'set ft=neoman' -"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -gx FZF_DEFAULT_COMMAND  'rg --files --color=never'
-
-source $HOME/.local/share/nvim/plugged/neoman.vim/scripts/nman.fish
 
 add_to_path "$HOME/src/bin"
 add_to_path "$HOME/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "$HOME/src/node/bin"
+add_to_path "$HOME/src/DataGrip/bin"
+add_to_path "$HOME/.config/yarn/global/node_modules/.bin"
+add_to_path "$HOME/.yarn/bin"
 set PATH $PATH ".git/safe/../../bin"
 
 # this function may be required
