@@ -51,17 +51,9 @@ function fish_title
   true
 end
 
-#if test -z "$SSH_ENV"
-  #set -xg SSH_ENV $HOME/.ssh/environment
-#end
-
 if test -z "$HOME/.dokku/contrib/dokku_client.sh"
   alias dokku "bash $HOME/.dokku/contrib/dokku_client.sh"
 end
-
-#if not __ssh_agent_is_started
-  #__ssh_agent_start
-#end
 
 # Abbreviations
 # =============
