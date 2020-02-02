@@ -30,7 +30,7 @@ set -g theme_display_ruby no
 set -g theme_color_scheme base16
 
 set -x TERM "xterm-256color"
-set -x TERMINAL "st"
+set -x TERMINAL "kitty"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
